@@ -1,6 +1,9 @@
-# Foundry Fund Me
+# FundMe Smart Contract Project
+
+This project demonstrates a basic funding and withdrawal smart contract, `FundMe`, written in Solidity, along with the deployment and interaction scripts using the Foundry framework.
 
 - [Getting Started](#getting-started)
+  - [Features](#features)
   - [Requirements](#requirements)
 - [Usage](#usage)
   - [Deploy](#deploy)
@@ -14,6 +17,19 @@
 - [Additional Info:](#additional-info)
 
 # Getting Started
+
+The `FundMe` contract allows users to send Ether to the contract and store it securely until the contract owner withdraws it. This repository contains:
+
+- Solidity contracts for `FundMe`
+- Scripts to deploy, fund, and withdraw from the contract using Foundry and `forge-std`
+- Comprehensive tests for contract interaction
+
+## Features
+
+- **Fund Contract**: Users can fund the contract by sending Ether.
+- **Withdraw Funds**: The contract owner can withdraw the funds.
+- **Deployment & Interactions**: Includes scripts for deploying and interacting with the contract.
+- **Testing**: Test the funding and withdrawal processes using Foundry's testing framework.
 
 ## Requirements
 
