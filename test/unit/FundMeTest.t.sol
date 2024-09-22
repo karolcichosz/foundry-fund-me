@@ -14,11 +14,10 @@ contract FundMeTest is Test {
   uint256 constant GAS_PRICE = 1;
 
   function setUp() external {
-    // us -> FundMeTest -> Fundme
     DeployFundMe deployFundMe = new DeployFundMe();
     fundMe = deployFundMe.run();
 
-    vm.deal(USER, STARTING_BALANCE); //give user some eth
+    vm.deal(USER, STARTING_BALANCE);
   }
 
   modifier funded() {
@@ -40,7 +39,7 @@ contract FundMeTest is Test {
   }
 
   function testFundFailsWithoutEnoughEth() public {
-    vm.expectRevert(); //the next line should revert
+    vm.expectRevert();
     fundMe.fund();
   }
 

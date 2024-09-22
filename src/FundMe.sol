@@ -68,12 +68,6 @@ contract FundMe {
       s_addressToAmountFunded[funder] = 0;
     }
     s_funders = new address[](0);
-    // // transfer
-    // payable(msg.sender).transfer(address(this).balance);
-
-    // // send
-    // bool sendSuccess = payable(msg.sender).send(address(this).balance);
-    // require(sendSuccess, "Send failed");
 
     // call
     (bool callSuccess, ) = payable(msg.sender).call{
@@ -81,17 +75,6 @@ contract FundMe {
     }("");
     require(callSuccess, "Call failed");
   }
-  // Explainer from: https://solidity-by-example.org/fallback/
-  // Ether is sent to contract
-  //      is msg.data empty?
-  //          /   \
-  //         yes  no
-  //         /     \
-  //    receive()?  fallback()
-  //     /   \
-  //   yes   no
-  //  /        \
-  //receive()  fallback()
 
   fallback() external payable {
     fund();
@@ -115,12 +98,3 @@ contract FundMe {
     return i_owner;
   }
 }
-
-// Concepts we didn't cover yet (will cover in later sections)
-// 1. Enum
-// 2. Events
-// 3. Try / Catch
-// 4. Function Selector
-// 5. abi.encode / decode
-// 6. Hash with keccak256
-// 7. Yul / Assembly
